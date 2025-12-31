@@ -12408,4 +12408,291 @@ body {
   }
 }
 
+/*
+  Registration Page Styles
+  Scoped to: .registration-page
+  Refined for Professional Look & Interaction
+*/
+.registration-page {
+  background-color: #FAFAFA;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  overflow-x: hidden;
+  max-width: 100%;
+  padding-top: 0 !important;
+}
+.registration-page .registration-header {
+  background: linear-gradient(to right, #B20000, #8B0000);
+  padding-bottom: 8rem !important;
+  width: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+  position: relative;
+  overflow: hidden;
+}
+.registration-page .registration-header::after, .registration-page .registration-header::before {
+  display: none !important;
+}
+.registration-page .nav-back-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.registration-page .nav-back-btn svg {
+  margin-right: 0.75rem;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.registration-page .nav-back-btn:hover {
+  background-color: #ffffff;
+  color: #E60012;
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.registration-page .nav-back-btn:hover svg {
+  transform: translateX(-3px);
+}
+.registration-page .registration-content {
+  margin-top: -6rem;
+  position: relative;
+  z-index: 10;
+}
+.registration-page .stepper-container {
+  margin-bottom: 3rem;
+}
+.registration-page .stepper-container .stepper-item {
+  position: relative;
+  z-index: 1;
+  width: 120px;
+  text-align: center;
+}
+.registration-page .stepper-container .stepper-item .stepper-circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.registration-page .stepper-container .stepper-item .stepper-circle.active {
+  background-color: #ffffff;
+  color: #E60012;
+  border: 3px solid #ffffff;
+}
+.registration-page .stepper-container .stepper-item .stepper-circle.inactive {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  border: 2px solid transparent;
+}
+.registration-page .stepper-container .stepper-item .stepper-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.registration-page .stepper-container .stepper-item .stepper-label.active-label {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.registration-page .stepper-container .stepper-line {
+  flex-grow: 1;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 1.75rem;
+  position: relative;
+  top: -15px;
+}
+.registration-page .form-card {
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  overflow: hidden;
+}
+.registration-page .form-card .form-label {
+  font-weight: 600;
+  color: #0F172A;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.registration-page .form-card .form-control, .registration-page .form-card .form-select {
+  padding: 0.8rem 1rem;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: #F8FAFC;
+}
+.registration-page .form-card .form-control:focus, .registration-page .form-card .form-select:focus {
+  background-color: #ffffff;
+  border-color: rgba(230, 0, 18, 0.5);
+  box-shadow: 0 0 0 4px rgba(230, 0, 18, 0.1);
+}
+.registration-page .form-card .form-control::placeholder, .registration-page .form-card .form-select::placeholder {
+  color: #CBD5E1;
+}
+.registration-page .form-card .btn-primary-custom {
+  background-color: #E60012;
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.registration-page .form-card .btn-primary-custom:hover {
+  background-color: #cc0010;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 0, 18, 0.3);
+}
+.registration-page .form-card .btn-primary-custom:active {
+  transform: translateY(0);
+}
+.registration-page .benefits-section {
+  margin-top: 4rem;
+}
+.registration-page .benefits-section .benefit-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.registration-page .benefits-section .benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(230, 0, 18, 0.08);
+  border-color: rgba(230, 0, 18, 0.1);
+}
+.registration-page .benefits-section .benefit-card:hover .icon-wrapper {
+  background-color: #E60012;
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
+}
+.registration-page .benefits-section .benefit-card .icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #FFE5E7;
+  color: #E60012;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+.registration-page .benefits-section .benefit-card h5 {
+  color: #0F172A;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.registration-page .benefits-section .benefit-card p {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+.registration-page .toast-container {
+  pointer-events: none;
+}
+.registration-page .toast-container .custom-toast {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-left: 4px solid #E60012;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0F172A;
+}
+.registration-page .toast-container .custom-toast.show {
+  transform: translateX(0);
+}
+.registration-page .toast-container .custom-toast.success {
+  border-left-color: #10B981;
+}
+.registration-page .toast-container .custom-toast.success .toast-icon {
+  color: #10B981;
+  background-color: rgba(16, 185, 129, 0.1);
+}
+.registration-page .toast-container .custom-toast.error {
+  border-left-color: #E60012;
+}
+.registration-page .toast-container .custom-toast.error .toast-icon {
+  color: #E60012;
+  background-color: rgba(230, 0, 18, 0.1);
+}
+.registration-page .toast-container .custom-toast .toast-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.registration-page .toast-container .custom-toast .toast-message {
+  flex-grow: 1;
+}
+
+/* =========================
+   3. Mixins (custom)
+========================= */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(20px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#backToTop:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+#backToTop svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 3px;
+}
+
 /*# sourceMappingURL=main.css.map */

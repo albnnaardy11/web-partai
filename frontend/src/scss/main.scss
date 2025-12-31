@@ -33,3 +33,7 @@
 @use "components/news";
 @use "components/gallery";
 @use "components/footer";
+
+// Pages
+@use "pages/registration";
+@use "components/back-to-top";
