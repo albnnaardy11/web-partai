@@ -11871,6 +11871,13 @@ textarea.form-control-lg {
 /* =========================
    4. Base Styles
 ========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Fix horizontal scroll */
+  width: 100%;
+}
+
 body {
   padding-top: 80px;
 }
@@ -12139,8 +12146,29 @@ body {
 .chairperson-section .floating-quote:hover {
   transform: translate(-50%, -50%) scale(1.1) rotate(10deg);
 }
-.chairperson-section .message-content p {
-  text-align: justify;
+.chairperson-section .message-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: min-content;
+  min-width: 0;
+  overflow-wrap: anywhere !important;
+  word-break: break-all !important;
+}
+.chairperson-section .message-card #chairperson-message-container,
+.chairperson-section .message-card #chairperson-message-paragraphs,
+.chairperson-section .message-card #chairperson-message-greeting {
+  overflow-wrap: anywhere !important;
+  word-break: break-all !important;
+  min-width: 0;
+}
+.chairperson-section .message-card p {
+  text-align: left;
+  line-height: 1.7;
+}
+.chairperson-section .border-danger {
+  margin-top: auto !important;
+  padding-top: 2rem;
 }
 .chairperson-section .bg-dark {
   background-color: rgb(128, 0, 10.0173913043) !important;

@@ -25,11 +25,35 @@
     }
   }
 
-  // Message Content
-  .message-content {
-    p {
-      text-align: justify;
+  // Message Card
+  .message-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    min-height: min-content;
+    min-width: 0; // Fix for flex child overflow
+    overflow-wrap: anywhere !important;
+    word-break: break-all !important;
+    
+    // Ensure all internal containers also handle this
+    #chairperson-message-container,
+    #chairperson-message-paragraphs, 
+    #chairperson-message-greeting {
+        overflow-wrap: anywhere !important;
+        word-break: break-all !important;
+        min-width: 0;
     }
+
+    p {
+      text-align: left;
+      line-height: 1.7;
+    }
+  }
+
+  // Signature area inside card
+  .border-danger {
+    margin-top: auto !important; // Push signature to bottom of card
+    padding-top: 2rem;
   }
 
   // Info Cards

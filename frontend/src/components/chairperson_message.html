@@ -15,9 +15,10 @@
                     <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
                 </svg>
-                <span style="font-size: 0.85rem;">Sambutan Ketua Umum</span>
+                <span id="chairperson-header-badge" style="font-size: 0.85rem;">Sambutan Ketua Umum</span>
             </div>
-            <h2 class="display-4 fw-bold mt-3">Pesan dari <span class="text-danger">Ibu Ketua</span></h2>
+            <h2 id="chairperson-header-title" class="display-4 fw-bold mt-3">Pesan dari <span class="text-danger">Ibu
+                    Ketua</span></h2>
         </div>
 
         <div class="row align-items-center gy-5">
@@ -29,7 +30,8 @@
                     style="width: 90%; height: 90%; z-index: -1; transform: rotate(-3deg); left: 5% !important;"></div>
 
                 <!-- Main Image -->
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=988&auto=format&fit=crop"
+                <img id="chairperson-image"
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=988&auto=format&fit=crop"
                     alt="Ibu Siti Rahmawati"
                     class="img-fluid rounded-5 shadow-lg w-100 object-fit-cover position-relative"
                     style="min-height: 500px; max-height: 600px;">
@@ -57,29 +59,36 @@
                             <path
                                 d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
                         </svg>
-                        <div class="ps-3 pt-2">
-                            <p class="mb-4 lead text-dark fw-medium" style="font-size: 1.15rem; line-height: 1.8;">
+                        <div id="chairperson-message-container" class="ps-3 pt-2">
+                            <p id="chairperson-message-greeting" class="mb-4 lead text-dark fw-medium"
+                                style="font-size: 1.15rem; line-height: 1.8;">
                                 "Assalamu’alaikum warahmatullahi wabarakatuh dan salam sejahtera untuk seluruh rakyat
                                 Indonesia."
                             </p>
-                            <p class="mb-4 text-secondary">
-                                Sebagai seorang ibu, saya memahami betul bagaimana pentingnya kasih sayang,
-                                perlindungan, dan pengorbanan untuk masa depan yang lebih baik. Nilai-nilai inilah yang
-                                kami bawa ke dalam dunia politik Indonesia.
-                            </p>
-                            <p class="mb-0 text-secondary">
-                                Mari bersama-sama kita wujudkan Indonesia yang lebih adil, makmur, dan penuh kasih
-                                sayang. Karena Indonesia adalah rumah kita bersama, dan setiap keluarga Indonesia berhak
-                                mendapatkan kehidupan yang layak.
-                            </p>
+                            <div id="chairperson-message-paragraphs">
+                                <p class="mb-4 text-secondary">
+                                    Sebagai seorang ibu, saya memahami betul bagaimana pentingnya kasih sayang,
+                                    perlindungan, dan pengorbanan untuk masa depan yang lebih baik. Nilai-nilai inilah
+                                    yang
+                                    kami bawa ke dalam dunia politik Indonesia.
+                                </p>
+                                <p class="mb-0 text-secondary">
+                                    Mari bersama-sama kita wujudkan Indonesia yang lebih adil, makmur, dan penuh kasih
+                                    sayang. Karena Indonesia adalah rumah kita bersama, dan setiap keluarga Indonesia
+                                    berhak
+                                    mendapatkan kehidupan yang layak.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Signature -->
                     <div class="border-start border-danger border-4 ps-4 mt-5">
-                        <p class="mb-0 small text-secondary">Wassalamu’alaikum warahmatullahi wabarakatuh,</p>
-                        <h4 class="fw-bold text-danger fst-italic mt-2 mb-1">Ibu Siti Rahmawati</h4>
-                        <small class="text-secondary fw-semibold">Ketua Umum Partai Ibu</small>
+                        <p id="chairperson-signature-greeting" class="mb-0 small text-secondary">Wassalamu’alaikum
+                            warahmatullahi wabarakatuh,</p>
+                        <h4 id="chairperson-name" class="fw-bold text-danger fst-italic mt-2 mb-1">Ibu Siti Rahmawati
+                        </h4>
+                        <small id="chairperson-title" class="text-secondary fw-semibold">Ketua Umum Partai Ibu</small>
                     </div>
                 </div>
 
@@ -95,7 +104,8 @@
                             </svg>
                             <div>
                                 <small class="opacity-75 d-block mb-1">Filosofi Kami</small>
-                                <h5 class="fw-bold mb-1">"Indonesia adalah keluarga besar kita"</h5>
+                                <h5 id="chairperson-philosophy" class="fw-bold mb-1">"Indonesia adalah keluarga besar
+                                    kita"</h5>
                             </div>
                         </div>
                     </div>
@@ -109,7 +119,8 @@
                             </svg>
                             <div>
                                 <small class="opacity-75 d-block mb-1">Komitmen Kami</small>
-                                <h5 class="fw-bold mb-1">"Kepedulian untuk setiap anak bangsa"</h5>
+                                <h5 id="chairperson-commitment" class="fw-bold mb-1">"Kepedulian untuk setiap anak
+                                    bangsa"</h5>
                             </div>
                         </div>
                     </div>
