@@ -1,0 +1,22 @@
+{
+  "name": "web-partai-frontend",
+  "version": "1.0.0",
+  "description": "Frontend website partai politik (Bootstrap + SCSS modular)",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run sass:watch\" \"npm run serve\"",
+    "sass": "sass src/scss/main.scss dist/css/main.css --style=expanded",
+    "sass:watch": "sass --watch src/scss/main.scss:dist/css/main.css",
+    "build": "npm run sass",
+    "js": "copy src\\js\\main.js dist\\js\\main.js",
+    "serve": "npx serve ."
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "sass": "^1.97.1"
+  }
+}

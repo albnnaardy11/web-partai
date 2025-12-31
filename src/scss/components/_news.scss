@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as *;
+
+/*
+  News Section Styles
+  Scoped to: .news-section
+*/
+
+.news-section {
+  
+  // Header
+  h2 {
+    letter-spacing: -0.02em;
+  }
+
+  // News Cards
+  .news-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-color: rgba($secondary-color, 0.05) !important;
+    
+    .news-img-wrapper {
+        img {
+            transition: transform 0.5s ease;
+        }
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+      border-color: transparent !important;
+      
+      .news-img-wrapper img {
+          transform: scale(1.05);
+      }
+    }
+  }
+
+  // Read More Link
+  .read-more-link {
+    transition: all 0.2s ease;
+    
+    &:hover {
+         color: $primary-hover !important;
+         
+         svg {
+             transform: translateX(4px);
+             transition: transform 0.2s ease;
+         }
+    }
+  }
+}

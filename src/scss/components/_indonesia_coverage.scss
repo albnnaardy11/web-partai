@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as *;
+
+/*
+  Indonesia Coverage Section Styles
+  Scoped to: .coverage-section
+*/
+
+.coverage-section {
+  
+  // Header
+  h2 {
+    letter-spacing: -0.02em;
+  }
+
+  // Stats Card
+  .bg-white.rounded-4.border.shadow-sm {
+      transition: transform 0.3s ease;
+      
+      &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+      }
+  }
+
+  // Region Stats Hover Effect
+  .hover-lift {
+      transition: all 0.3s ease;
+      
+      &:hover {
+          background-color: rgba(255,255,255,0.15) !important;
+          transform: translateY(-3px);
+      }
+  }
+
+  // Map Markers
+  .map-markers {
+      div {
+           animation: float 3s ease-in-out infinite;
+           
+           &:nth-child(2) { animation-delay: 0.5s; }
+           &:nth-child(3) { animation-delay: 1s; }
+           &:nth-child(4) { animation-delay: 1.5s; }
+           &:nth-child(5) { animation-delay: 2s; }
+      }
+  }
+
+  @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+  }
+}

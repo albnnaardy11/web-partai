@@ -1,0 +1,55 @@
+@use '../abstracts/variables' as *;
+
+/*
+  Values Section Styles
+  Scoped to: .values-section
+*/
+
+.values-section {
+  
+  // Header
+  h2 {
+    letter-spacing: -0.02em;
+  }
+
+  // Value Grid Cards
+  .value-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-color: rgba($secondary-color, 0.05) !important;
+    
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      font-size: 1.5rem;
+       transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+      border-color: transparent !important;
+
+      .icon-box {
+         transform: scale(1.1);
+      }
+    }
+  }
+
+  // Bottom Peran Ibu Card
+  .peran-ibu-card {
+    border-color: rgba($secondary-color, 0.05) !important;
+    
+    .icon-circle {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba($primary-color, 0.2);
+    }
+    
+    // Hover effect for internal columns (optional, can be added if needed)
+    .col-lg-4:hover {
+       .icon-circle {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 15px -3px rgba($primary-color, 0.3);
+       }
+    }
+  }
+}

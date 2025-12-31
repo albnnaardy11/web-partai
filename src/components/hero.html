@@ -1,0 +1,88 @@
+<!-- 
+  Hero Component 
+  - Custom class: .hero-section
+  - ID: #hero-section
+-->
+<section id="hero-section" class="hero-section py-5 overflow-hidden">
+    <div class="container py-lg-5">
+        <div class="row align-items-center gy-5">
+
+            <!-- Left Column: Content -->
+            <div class="col-lg-6 order-2 order-lg-1">
+
+                <!-- Badge -->
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-danger-subtle text-danger fw-semibold mb-4"
+                    style="background-color: var(--bs-danger-bg-subtle);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                    </svg>
+                    <span style="font-size: 0.85rem;">Partai Ibu Politik Baru Indonesia</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="display-4 fw-bold lh-tight mb-4 text-dark">
+                    Bersama <span class="text-danger">Ibu</span>, Bangun <br class="d-none d-lg-block">
+                    <span class="text-danger">Indonesia</span> yang Lebih Baik
+                </h1>
+
+                <!-- Description -->
+                <p class="lead text-secondary mb-5" style="max-width: 540px;">
+                    Menghadirkan kepemimpinan yang penuh kasih sayang, adil, dan berintegritas untuk kesejahteraan
+                    seluruh rakyat Indonesia.
+                </p>
+
+                <!-- Buttons -->
+                <div class="d-flex flex-wrap gap-3 mb-5">
+                    <a href="#" class="btn btn-primary rounded-pill px-4 py-3 fw-semibold shadow-sm">
+                        Daftar Sekarang
+                    </a>
+                    <a href="#" class="btn btn-outline-danger rounded-pill px-4 py-3 fw-semibold">
+                        Pelajari Lebih Lanjut
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="row g-4">
+                    <div class="col-auto">
+                        <h3 class="fw-bold text-danger mb-0">50K+</h3>
+                        <small class="text-secondary fw-medium">Anggota Aktif</small>
+                    </div>
+                    <div class="col-auto border-start ps-4">
+                        <h3 class="fw-bold text-danger mb-0">34</h3>
+                        <small class="text-secondary fw-medium">Provinsi</small>
+                    </div>
+                    <div class="col-auto border-start ps-4">
+                        <h3 class="fw-bold text-danger mb-0">100+</h3>
+                        <small class="text-secondary fw-medium">Program</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Image & Decoration -->
+            <div class="col-lg-6 order-1 order-lg-2 position-relative">
+                <!-- Pink Background Shape -->
+                <div class="hero-shape-bg position-absolute top-0 end-0 bg-danger-subtle rounded-4 start-0 bottom-0 ms-auto"
+                    style="z-index: -1; transform: rotate(2deg); width: 90%; height: 95%;"></div>
+
+                <!-- Floating Badge -->
+                <div class="position-absolute top-0 end-0 mt-4 me-4 bg-white rounded-circle shadow p-3 d-flex align-items-center justify-content-center floating-badge"
+                    style="width: 64px; height: 64px; z-index: 10;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#E60012"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                    </svg>
+                </div>
+
+                <!-- Main Image -->
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=988&auto=format&fit=crop"
+                    alt="Relawan Partai Ibu" class="img-fluid rounded-4 shadow-lg w-100 object-fit-cover"
+                    style="min-height: 500px; max-height: 600px;">
+            </div>
+
+        </div>
+    </div>
+</section>

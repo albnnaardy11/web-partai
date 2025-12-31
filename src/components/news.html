@@ -1,0 +1,165 @@
+<!-- 
+  News Component 
+  - Custom class: .news-section
+  - ID: #news-section
+-->
+<section id="news-section" class="news-section py-5">
+    <div class="container py-lg-5">
+
+        <!-- Header -->
+        <div class="text-center mb-5 pb-lg-3">
+            <div
+                class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-danger-subtle text-danger fw-semibold mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-newspaper" viewBox="0 0 16 16">
+                    <path
+                        d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
+                    <path
+                        d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" />
+                </svg>
+                <span style="font-size: 0.85rem;">Berita Terkini</span>
+            </div>
+            <h2 class="display-5 fw-bold mb-3">Berita & <span class="text-danger">Kegiatan</span></h2>
+            <p class="text-secondary opacity-75 mx-auto" style="max-width: 600px;">
+                Update terbaru tentang program dan kegiatan Partai Ibu untuk Indonesia
+            </p>
+        </div>
+
+        <!-- News Grid -->
+        <div class="row g-4 mb-5">
+
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="news-card h-100 bg-white rounded-4 border overflow-hidden d-flex flex-column hover-shadow">
+                    <!-- Image -->
+                    <div class="news-img-wrapper position-relative overflow-hidden bg-light" style="height: 240px;">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop"
+                            alt="Program Beasiswa" class="w-100 h-100 object-fit-cover">
+                        <span
+                            class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill fw-medium">Program</span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex align-items-center gap-2 text-secondary small mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                            </svg>
+                            <span>18 November 2025</span>
+                        </div>
+                        <h5 class="fw-bold mb-3 lh-base">Partai Ibu Luncurkan Program Beasiswa untuk 50,000 Anak
+                            Indonesia</h5>
+                        <p class="text-secondary small mb-4 flex-grow-1">
+                            Program beasiswa pendidikan gratis diluncurkan untuk membantu anak-anak Indonesia dari
+                            keluarga kurang mampu...
+                        </p>
+                        <a href="#"
+                            class="d-inline-flex align-items-center text-danger fw-semibold text-decoration-none read-more-link">
+                            Baca Selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right ms-2" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="news-card h-100 bg-white rounded-4 border overflow-hidden d-flex flex-column hover-shadow">
+                    <!-- Image -->
+                    <div class="news-img-wrapper position-relative overflow-hidden bg-light" style="height: 240px;">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb7d5b43?q=80&w=1000&auto=format&fit=crop"
+                            alt="Kunjungan 10 Provinsi" class="w-100 h-100 object-fit-cover">
+                        <span
+                            class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill fw-medium">Kegiatan</span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex align-items-center gap-2 text-secondary small mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                            </svg>
+                            <span>15 November 2025</span>
+                        </div>
+                        <h5 class="fw-bold mb-3 lh-base">Kunjungan ke 10 Provinsi: Mendengar Aspirasi Ibu-Ibu Indonesia
+                        </h5>
+                        <p class="text-secondary small mb-4 flex-grow-1">
+                            Ketua Umum Partai Ibu melakukan kunjungan kerja ke berbagai provinsi untuk mendengar
+                            langsung aspirasi masyarakat...
+                        </p>
+                        <a href="#"
+                            class="d-inline-flex align-items-center text-danger fw-semibold text-decoration-none read-more-link">
+                            Baca Selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right ms-2" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="news-card h-100 bg-white rounded-4 border overflow-hidden d-flex flex-column hover-shadow">
+                    <!-- Image -->
+                    <div class="news-img-wrapper position-relative overflow-hidden bg-light" style="height: 240px;">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop"
+                            alt="UMKM Binaan" class="w-100 h-100 object-fit-cover">
+                        <span
+                            class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill fw-medium">Prestasi</span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex align-items-center gap-2 text-secondary small mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                            </svg>
+                            <span>12 November 2025</span>
+                        </div>
+                        <h5 class="fw-bold mb-3 lh-base">UMKM Binaan Partai Ibu Raih Omzet Miliaran Rupiah</h5>
+                        <p class="text-secondary small mb-4 flex-grow-1">
+                            Ratusan UMKM yang dibina Partai Ibu berhasil meningkatkan omzet hingga ratusan persen dalam
+                            6 bulan terakhir...
+                        </p>
+                        <a href="#"
+                            class="d-inline-flex align-items-center text-danger fw-semibold text-decoration-none read-more-link">
+                            Baca Selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right ms-2" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Button -->
+        <div class="text-center">
+            <a href="#" class="btn btn-danger rounded-pill px-4 py-3 fw-semibold shadow-sm hover-up">
+                Lihat Semua Berita
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-right ms-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+            </a>
+        </div>
+
+    </div>
+</section>

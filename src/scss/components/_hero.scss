@@ -1,0 +1,172 @@
+@use '../abstracts/variables' as *;
+
+/*
+  Hero Section Styles
+  Scoped to: .hero-section
+*/
+
+.hero-section {
+  position: relative;
+  // Enforce the requested total width constraint
+  max-width: 1280px; 
+  margin: 0 auto; // Center the 1280px container
+  
+  // Enforce height on desktop
+  @media (min-width: 992px) {
+    min-height: 924px;
+    display: flex;
+    align-items: center;
+
+    .row {
+      height: 100%;
+      align-items: center;
+    }
+  }
+
+  // Content Scaling
+  h1 {
+    // Scaled up significantly
+    font-size: 4.5rem; 
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    
+    @media (max-width: 1200px) {
+      font-size: 3.5rem;
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+    }
+  }
+
+  p.lead {
+    font-size: 1.5rem; // Scaled up
+    line-height: 1.6;
+    max-width: 600px; // Allowed more width
+  }
+
+  // Badge Scaling
+  .rounded-pill.bg-danger-subtle {
+    padding: 0.75rem 1.5rem !important; // Larger padding
+    span {
+      font-size: 1rem !important; // Larger text
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  // Buttons Scaling
+  .btn {
+    padding: 1rem 2.5rem !important; // Larger hit area
+    font-size: 1.125rem !important; // Larger text
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: $primary-hover;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -10px rgba($primary-color, 0.5);
+    }
+  }
+
+  .btn-outline-danger {
+    color: $primary-color;
+    border-color: $primary-color;
+    border-width: 2px;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+
+  // Stats Scaling
+  h3 {
+    font-size: 2.5rem; // Larger numbers
+    letter-spacing: -0.02em;
+  }
+  small {
+    font-size: 1rem; // Larger labels
+  }
+
+  // Decoration & Image
+  .hero-shape-bg {
+    background-color: $primary-light !important;
+    border-radius: 3rem; // Larger radius
+  }
+
+  // Image Specifics
+  img {
+    // Enforce logic to respect the 924px height intent
+    @media (min-width: 992px) {
+      height: 924px !important;
+      width: 616px !important;
+      object-fit: cover;
+      max-height: none !important;
+      border-radius: 2rem !important;
+    }
+  }
+
+  .floating-badge {
+    animation: float 3s ease-in-out infinite;
+    width: 80px !important; // Larger floating badge
+    height: 80px !important;
+    
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  // Floating Animation
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  // Mobile Tweaks
+  @media (max-width: 991.98px) {
+    text-align: center;
+    max-width: 100%;
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    p.lead {
+      font-size: 1.1rem;
+    }
+
+    .hero-shape-bg {
+      width: 100% !important;
+      height: 100% !important;
+      transform: rotate(0deg) !important;
+    }
+
+    .d-flex.flex-wrap {
+      justify-content: center;
+    }
+
+    .row.g-4 {
+      justify-content: center;
+    }
+
+    .border-start {
+      border-left: none !important;
+    }
+
+    img {
+      height: auto !important;
+      width: 100% !important;
+      max-height: 500px !important;
+    }
+  }
+}

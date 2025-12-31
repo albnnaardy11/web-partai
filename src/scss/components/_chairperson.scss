@@ -1,0 +1,64 @@
+@use '../abstracts/variables' as *;
+
+/*
+  Chairperson Section Styles
+  Scoped to: .chairperson-section
+*/
+
+.chairperson-section {
+  
+  h2 {
+    letter-spacing: -0.02em;
+  }
+
+  // Image Area
+  .chairperson-blob {
+    border-radius: 4rem; // Custom rounded corners
+  }
+
+  // Quote Icon Animation
+  .floating-quote {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1) rotate(10deg);
+    }
+  }
+
+  // Message Content
+  .message-content {
+    p {
+      text-align: justify;
+    }
+  }
+
+  // Info Cards
+  .bg-dark {
+    background-color: darken($primary-color, 20%) !important; // Deep red/maroon
+  }
+
+  // Mobile Tweaks
+  @media (max-width: 991.98px) {
+    .chairperson-blob {
+      width: 100% !important;
+      height: 100% !important;
+      transform: rotate(0deg) !important;
+    }
+    
+    .message-content {
+       p {
+        text-align: left;
+       }
+    }
+    
+    .floating-quote {
+      width: 60px !important;
+      height: 60px !important; 
+      
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

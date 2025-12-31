@@ -1,0 +1,84 @@
+@use '../abstracts/variables' as *;
+
+/* 
+  Navbar Component Styles
+  Scoped to: .navbar-main
+*/
+
+.navbar-main {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  // Brand Styling
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+    background-color: $primary-color;
+    transition: transform 0.3s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .brand-title {
+    color: $primary-color !important;
+    letter-spacing: -0.02em;
+  }
+
+  .navbar-brand:hover {
+    .brand-logo {
+      transform: scale(1.05);
+    }
+  }
+
+  // Navigation Links
+  .nav-link {
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primary-color !important;
+    }
+
+    // Active state indicator could be added here
+  }
+
+  // "Bergabung" Button customization
+  .btn-join {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: $primary-hover;
+      border-color: $primary-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba($primary-color, 0.25) !important;
+    }
+  }
+
+  // Mobile Adjustments
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      padding-top: 1rem;
+      background: $white;
+    }
+    
+    .nav-item {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      
+      &:last-child {
+        border-bottom: none;
+        padding-top: 1rem;
+      }
+    }
+
+    .btn-join {
+      width: 100%;
+    }
+  }
+}

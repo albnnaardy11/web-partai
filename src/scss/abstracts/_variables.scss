@@ -1,0 +1,24 @@
+// Brand Colors
+$primary-color: #E60012 !default; // Partai Red
+$primary-color: #E60012 !default; // Partai Red
+$primary-hover: #cc0010 !default;
+$primary-light: #FFE5E7 !default; // Soft pink for backgrounds/badges
+$secondary-color: #0F172A !default; // Dark Navy for detailed text or secondary actions
+$dark-bg: #0B1120 !default; // Footer background (Very dark blue/black)
+$white: #ffffff !default;
+$light-gray: #f8f9fa !default;
+$text-muted: #94a3b8 !default; // Slate 400 for footer text
+
+// Typography
+$font-family-sans-serif: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-heading: $font-family-sans-serif !default;
+
+// Spacing & Layout
+$navbar-height: 80px;
+$border-radius-pill: 50rem !default;
+$container-max-width: 1320px !default; // Matches Bootstrap XXL
+
+// Buttons
+$btn-padding-y: 0.625rem !default;
+$btn-padding-x: 1.5rem !default;
+$btn-font-weight: 600 !default;

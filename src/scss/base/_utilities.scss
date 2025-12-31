@@ -1,0 +1,6 @@
+@use '../abstracts/variables' as *;
+
+// Fix for fixed-top navbar
+body {
+  padding-top: $navbar-height;
+}

@@ -1,0 +1,59 @@
+@use '../abstracts/variables' as *;
+
+/* 
+  Footer Component Styles
+  Scoped to: .footer-main
+*/
+
+.footer-main {
+  background-color: $dark-bg;
+  font-size: 0.9rem;
+  
+  h5 {
+    letter-spacing: -0.01em;
+  }
+
+  // Social Buttons
+  .social-btn {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $primary-color;
+      transform: translateY(-2px);
+    }
+  }
+
+  // Footer Links
+  .footer-links a {
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $white !important;
+      padding-left: 2px;
+    }
+  }
+
+  // Contact List
+  .contact-list {
+    .icon-wrapper {
+      min-width: 20px; // Ensure icons align even if text wraps
+    }
+  }
+
+  // Divider Customization
+  hr {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  // Mobile Spacing
+  @media (max-width: 767.98px) {
+    text-align: left; /* Ensure left align on mobile as per design usually */
+    
+    .col-md-6 {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

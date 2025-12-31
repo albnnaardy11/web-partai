@@ -1,0 +1,35 @@
+/* =========================
+   1. Bootstrap Variable Override
+========================= */
+@use "abstracts/variables" as *;
+
+/* =========================
+   2. Bootstrap SCSS
+========================= */
+@use "../../node_modules/bootstrap/scss/bootstrap";
+
+/* =========================
+   3. Mixins (custom)
+========================= */
+@use "abstracts/mixins";
+
+/* =========================
+   4. Base Styles
+========================= */
+@use "base/reset";
+@use "base/typography";
+@use "base/utilities";
+
+/* =========================
+   5. Components
+========================= */
+@use "components/navbar";
+@use "components/hero";
+@use "components/about";
+@use "components/chairperson";
+@use "components/values";
+@use "components/program";
+@use "components/indonesia_coverage";
+@use "components/news";
+@use "components/gallery";
+@use "components/footer";
