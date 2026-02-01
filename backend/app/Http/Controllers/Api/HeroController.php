@@ -6,10 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\HeroSection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use OpenApi\Attributes as OA;
 
 class HeroController extends Controller
 {
+    #[OA\Get(path: '/api/hero', summary: 'Get hero section content', tags: ['General'])]
+    #[OA\Response(response: 200, description: 'Successful operation')]
     public function index()
+
     {
         $hero = HeroSection::where('is_active', true)->latest()->first();
 

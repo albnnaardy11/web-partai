@@ -6,10 +6,34 @@ use App\Http\Controllers\Controller;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use OpenApi\Attributes as OA;
 
 class MemberRegistrationController extends Controller
 {
+    #[OA\Post(path: '/api/member-registrations', summary: 'Register a new member', tags: ['Members'])]
+    #[OA\RequestBody(
+        required: true,
+        content: new OA\MediaType(
+            mediaType: 'multipart/form-data',
+            schema: new OA\Schema(
+                required: ["full_name", "email", "phone", "nik", "address", "province", "city"],
+                properties: [
+                    new OA\Property(property: "full_name", type: "string", example: "Ahmad Dahlan"),
+                    new OA\Property(property: "email", type: "string", format: "email", example: "ahmad@example.com"),
+                    new OA\Property(property: "phone", type: "string", example: "081234567890"),
+                    new OA\Property(property: "nik", type: "string", example: "1234567890123456"),
+                    new OA\Property(property: "address", type: "string", example: "Jl. Merdeka No. 1"),
+                    new OA\Property(property: "province", type: "string", example: "DKI Jakarta"),
+                    new OA\Property(property: "city", type: "string", example: "Jakarta Pusat"),
+                    new OA\Property(property: "ktp_photo", type: "string", format: "binary", description: "KTP Photo file")
+                ]
+            )
+        )
+    )]
+    #[OA\Response(response: 201, description: 'Registration successful')]
+    #[OA\Response(response: 422, description: 'Validation error')]
     public function register(Request $request)
+
     {
         $validator = Validator::make($request->all(), [
             'full_name' => 'required|string|max:255',
@@ -59,3 +83,4 @@ class MemberRegistrationController extends Controller
         ], 201);
     }
 }
+

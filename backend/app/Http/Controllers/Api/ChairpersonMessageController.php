@@ -6,10 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\ChairpersonMessage;
+use OpenApi\Attributes as OA;
 
 class ChairpersonMessageController extends Controller
 {
+    #[OA\Get(path: '/api/chairperson-message', summary: 'Get chairperson message', tags: ['General'])]
+    #[OA\Response(response: 200, description: 'Successful operation')]
     public function index()
+
     {
         $message = ChairpersonMessage::where('is_active', true)->latest()->first();
 

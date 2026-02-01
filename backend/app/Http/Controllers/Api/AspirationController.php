@@ -6,10 +6,27 @@ use App\Http\Controllers\Controller;
 use App\Models\Aspiration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use OpenApi\Attributes as OA;
 
 class AspirationController extends Controller
 {
+    #[OA\Post(path: '/api/aspirations', summary: 'Submit a new aspiration', tags: ['Aspirations'])]
+    #[OA\RequestBody(
+        required: true,
+        content: new OA\JsonContent(
+            required: ["name", "email", "subject", "message"],
+            properties: [
+                new OA\Property(property: "name", type: "string", example: "Budi Santoso"),
+                new OA\Property(property: "email", type: "string", format: "email", example: "budi@example.com"),
+                new OA\Property(property: "subject", type: "string", example: "Saran Pembangunan"),
+                new OA\Property(property: "message", type: "string", example: "Saya ingin menyarankan agar...")
+            ]
+        )
+    )]
+    #[OA\Response(response: 201, description: 'Aspiration submitted successfully')]
+    #[OA\Response(response: 422, description: 'Validation error')]
     public function store(Request $request)
+
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -48,3 +65,4 @@ class AspirationController extends Controller
         ], 201);
     }
 }
+

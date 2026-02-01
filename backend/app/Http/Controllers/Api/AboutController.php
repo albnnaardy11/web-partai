@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 use App\Models\AboutSection;
 
+use OpenApi\Attributes as OA;
+
 class AboutController extends Controller
 {
+    #[OA\Get(path: '/api/about', summary: 'Get about section content', tags: ['General'])]
+    #[OA\Response(response: 200, description: 'Successful operation')]
     public function index()
+
     {
         $about = AboutSection::where('is_active', true)->latest()->first();
 
@@ -19,7 +24,7 @@ class AboutController extends Controller
                 'header_title' => 'Partai Ibu untuk <span class="text-danger">Indonesia</span>',
                 'header_description' => 'Kami percaya bahwa kekuatan kasih sayang seorang ibu dapat mengubah Indonesia menjadi negara yang lebih adil, sejahtera, dan penuh kepedulian.',
                 'feature_1_title' => 'Visi Indonesia',
-                'feature_1_description' => 'Mewujudkan Indonesia yang maju, adil, dan sejahtera dengan semangat gotong royong dan kepedulian untuk seluruh rakyat dari Sabang sampai Merauke.',
+                'feature_1_description' => 'Mewujudkan Indonesia yang maju, adil, dan sejahtera dengan semangat gotong royong and kepedulian untuk seluruh rakyat dari Sabang sampai Merauke.',
                 'feature_2_title' => 'Kepemimpinan Ibu',
                 'feature_2_description' => 'Menghadirkan kepemimpinan yang penuh kasih sayang, tegas namun bijaksana, dan selalu mengutamakan kepentingan keluarga Indonesia.',
                 'feature_3_title' => 'Integritas Tinggi',
@@ -44,3 +49,4 @@ class AboutController extends Controller
         ]);
     }
 }
+

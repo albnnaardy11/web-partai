@@ -1,0 +1,284 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Website Partai API Documentation",
+        "description": "Dokumentasi API untuk Website Partai",
+        "contact": {
+            "email": "admin@partai.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/api/about": {
+            "get": {
+                "tags": [
+                    "General"
+                ],
+                "summary": "Get about section content",
+                "operationId": "246ced98173c994c6ec8ed96170a84e4",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/articles": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "Get list of articles",
+                "operationId": "93ded9e31119e6bbb22455c72ef97f19",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search keyword for articles",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/articles/{id}": {
+            "get": {
+                "tags": [
+                    "Articles"
+                ],
+                "summary": "Get article detail",
+                "operationId": "a85697b2464e9aaa3f9980a83edbef88",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of article to return",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "404": {
+                        "description": "Article not found"
+                    }
+                }
+            }
+        },
+        "/api/aspirations": {
+            "post": {
+                "tags": [
+                    "Aspirations"
+                ],
+                "summary": "Submit a new aspiration",
+                "operationId": "8a67ee8fdb93de6a99440337b87d64f0",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "subject",
+                                    "message"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Budi Santoso"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "budi@example.com"
+                                    },
+                                    "subject": {
+                                        "type": "string",
+                                        "example": "Saran Pembangunan"
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "example": "Saya ingin menyarankan agar..."
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Aspiration submitted successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/chairperson-message": {
+            "get": {
+                "tags": [
+                    "General"
+                ],
+                "summary": "Get chairperson message",
+                "operationId": "3ebe3dc76e6fcbc409ffbc5f7258e89a",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/gallery-items": {
+            "get": {
+                "tags": [
+                    "General"
+                ],
+                "summary": "Get list of gallery items",
+                "operationId": "06d73d9a4529d33c03e0a6b8292bedb0",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/hero": {
+            "get": {
+                "tags": [
+                    "General"
+                ],
+                "summary": "Get hero section content",
+                "operationId": "39ef000d7d78b16591d47cd24ba5b696",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/api/member-registrations": {
+            "post": {
+                "tags": [
+                    "Members"
+                ],
+                "summary": "Register a new member",
+                "operationId": "47db41a847656188c964892672e1eca6",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "full_name",
+                                    "email",
+                                    "phone",
+                                    "nik",
+                                    "address",
+                                    "province",
+                                    "city"
+                                ],
+                                "properties": {
+                                    "full_name": {
+                                        "type": "string",
+                                        "example": "Ahmad Dahlan"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "ahmad@example.com"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "example": "081234567890"
+                                    },
+                                    "nik": {
+                                        "type": "string",
+                                        "example": "1234567890123456"
+                                    },
+                                    "address": {
+                                        "type": "string",
+                                        "example": "Jl. Merdeka No. 1"
+                                    },
+                                    "province": {
+                                        "type": "string",
+                                        "example": "DKI Jakarta"
+                                    },
+                                    "city": {
+                                        "type": "string",
+                                        "example": "Jakarta Pusat"
+                                    },
+                                    "ktp_photo": {
+                                        "description": "KTP Photo file",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Registration successful"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/programs": {
+            "get": {
+                "tags": [
+                    "General"
+                ],
+                "summary": "Get list of programs",
+                "operationId": "26ad92229b197f8627ec77b8230f3c84",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "General",
+            "description": "General"
+        },
+        {
+            "name": "Articles",
+            "description": "Articles"
+        },
+        {
+            "name": "Aspirations",
+            "description": "Aspirations"
+        },
+        {
+            "name": "Members",
+            "description": "Members"
+        }
+    ]
+}
