@@ -14,6 +14,7 @@ Route::get('/articles', [App\Http\Controllers\Api\ArticleController::class, 'ind
 Route::get('/gallery', [App\Http\Controllers\Api\GalleryItemController::class, 'index']);
 Route::get('/settings', [App\Http\Controllers\Api\SiteSettingController::class, 'index']);
 Route::post('/register', [App\Http\Controllers\Api\MemberRegistrationController::class, 'register']);
+Route::post('/aspirations', [App\Http\Controllers\Api\AspirationController::class, 'store']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

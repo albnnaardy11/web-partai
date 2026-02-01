@@ -29,6 +29,7 @@ async function loadComponent(id, path) {
     if (id === 'program') fetchProgramData();
     if (id === 'coverage') fetchCoverageData();
     if (id === 'news') fetchNewsData();
+    if (id === 'aspirations') initAspirationForm();
     if (id === 'gallery') fetchGalleryData();
     if (id === 'footer') fetchSettingsData();
   } catch (error) {
@@ -191,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComponent("program", "components/program.html");
     loadComponent("coverage", "components/indonesia_coverage.html");
     loadComponent("news", "components/news.html");
+    loadComponent("aspirations", "components/aspirations.html");
     loadComponent("gallery", "components/gallery.html");
     loadComponent("footer", "components/footer.html");
 
@@ -441,4 +443,56 @@ async function fetchSettingsData() {
         const emailEl = document.getElementById('footer-email');
         if(emailEl && settings.email) emailEl.innerText = settings.email;
     } catch(e){console.warn(e);}
+}
+
+function initAspirationForm() {
+    const form = document.getElementById('aspirationForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('aspSubmitBtn');
+        const success = document.getElementById('aspSuccess');
+        const successMsg = document.getElementById('aspSuccessMsg');
+
+        btn.disabled = true;
+        btn.innerText = 'Mengirim...';
+
+        const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            subject: form.subject.value,
+            message: form.message.value
+        };
+
+        try {
+            const r = await fetch('http://localhost:8000/api/aspirations', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await r.json();
+
+            if (r.ok) {
+                success.classList.remove('d-none');
+                successMsg.innerText = data.message;
+                form.reset();
+                btn.innerText = 'Kirim Aspirasi';
+                btn.disabled = false;
+            } else {
+                alert('Gagal mengirim aspirasi. Periksa kembali form Anda.');
+                btn.innerText = 'Kirim Aspirasi';
+                btn.disabled = false;
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Tidak dapat terhubung ke server.');
+            btn.innerText = 'Kirim Aspirasi';
+            btn.disabled = false;
+        }
+    });
 }

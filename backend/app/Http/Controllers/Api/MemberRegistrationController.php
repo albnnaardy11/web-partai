@@ -38,6 +38,20 @@ class MemberRegistrationController extends Controller
 
         $member = Member::create($data);
 
+        // Notify Admins
+        $admins = \App\Models\User::all();
+        \Filament\Notifications\Notification::make()
+            ->title('Pendaftaran Anggota Baru')
+            ->body("Anggota baru terdaftar: {$member->full_name}")
+            ->icon('heroicon-o-user-plus')
+            ->color('success')
+            ->actions([
+                \Filament\Actions\Action::make('view')
+                    ->label('Lihat Detail')
+                    ->url(\App\Filament\Resources\MemberResource::getUrl('edit', ['record' => $member])),
+            ])
+            ->sendToDatabase($admins);
+
         return response()->json([
             'success' => true,
             'message' => 'Pendaftaran berhasil! Data Anda akan divalidasi oleh tim kami.',

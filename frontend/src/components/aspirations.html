@@ -1,0 +1,115 @@
+<!-- 
+  Aspirations Component 
+  - Section: #aspiration-section
+-->
+<section id="aspiration-section" class="aspiration-section py-5 bg-white">
+    <div class="container py-lg-5">
+        <div class="row align-items-center g-5">
+
+            <!-- Content -->
+            <div class="col-lg-5">
+                <div
+                    class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-danger-subtle text-danger fw-semibold mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-chat-quote-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M5.882 4.03A.5.5 0 0 1 6 4.5v3.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .382.03zm6.118 0a.5.5 0 0 1 .118.47L11.5 8.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .118.03zM13 13.417V8.5s-.003-.012-.007-.027c-.012-.045-.03-.109-.053-.182a3.34 3.34 0 0 0-.154-.39c-.11-.243-.255-.52-.424-.808C11.69 6.255 10.932 5.5 10 5.5c-1.236 0-2.18.919-2.547 2.05-.133.407-.123.834.02 1.258.14.417.411.78.783 1.04.28.196.602.321.944.364V12.5s.003.012.007.027c.012.045.03.109.053.182.023.073.076.2.154.39.11.243.255.52.424.808.673.853 1.431 1.608 2.363 1.608 1.236 0 2.18-.919 2.547-2.05.133-.407.123-.834-.02-1.258a2.532 2.532 0 0 0-.783-1.04 2.147 2.147 0 0 0-.944-.364z" />
+                    </svg>
+                    <span style="font-size: 0.85rem;">Suara Rakyat</span>
+                </div>
+                <h2 class="display-5 fw-bold mb-4">Aspirasi <span class="text-danger">Ibu</span> Nusantara</h2>
+                <p class="lead text-secondary mb-4">
+                    Kami percaya setiap suara berharga. Sampaikan aspirasi, keluhan, atau harapan Anda untuk Indonesia
+                    yang lebih baik.
+                </p>
+
+                <div class="d-flex flex-column gap-3 mb-5">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-check-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.42-6.447a.015.015 0 0 1 .015-.01z" />
+                            </svg>
+                        </div>
+                        <span class="fw-semibold text-dark">Langsung ke DPP Partai Ibu</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-check-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.42-6.447a.015.015 0 0 1 .015-.01z" />
+                            </svg>
+                        </div>
+                        <span class="fw-semibold text-dark">Ditinjau oleh Tim Pakar</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-check-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.42-6.447a.015.015 0 0 1 .015-.01z" />
+                            </svg>
+                        </div>
+                        <span class="fw-semibold text-dark">Laporan Progres Aspirasi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="col-lg-7">
+                <div class="bg-light rounded-5 p-4 p-md-5 shadow-sm border">
+                    <form id="aspirationForm">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Nama Anda</label>
+                                <input type="text" name="name" class="form-control rounded-3 border-0 py-3"
+                                    placeholder="Nama lengkap" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Email</label>
+                                <input type="email" name="email" class="form-control rounded-3 border-0 py-3"
+                                    placeholder="email@anda.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Subjek Aspirasi</label>
+                                <input type="text" name="subject" class="form-control rounded-3 border-0 py-3"
+                                    placeholder="Misal: Pendidikan, Ekonomi, Kesehatan" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Pesan Aspirasi</label>
+                                <textarea name="message" class="form-control rounded-3 border-0 py-3" rows="4"
+                                    placeholder="Tuliskan aspirasi Anda di sini..." required></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-danger w-100 rounded-pill py-3 fw-bold shadow-sm"
+                                id="aspSubmitBtn">
+                                Kirim Aspirasi
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="aspSuccess" class="alert alert-success mt-4 d-none rounded-4 border-0">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 32px; height: 32px; flex-shrink: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-check-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.42-6.447a.015.015 0 0 1 .015-.01z" />
+                                </svg>
+                            </div>
+                            <span id="aspSuccessMsg"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

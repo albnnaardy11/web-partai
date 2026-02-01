@@ -8,6 +8,8 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class MemberStats extends BaseWidget
 {
+    protected static ?int $sort = 1;
+
     protected function getStats(): array
     {
         return [
@@ -19,6 +21,10 @@ class MemberStats extends BaseWidget
                 ->description('Pendaftaran perlu diverifikasi')
                 ->descriptionIcon('heroicon-m-clock')
                 ->color('warning'),
+            Stat::make('Aspirasi Baru', \App\Models\Aspiration::where('status', 'unread')->count())
+                ->description('Pesan rakyat belum dibaca')
+                ->descriptionIcon('heroicon-m-chat-bubble-left-right')
+                ->color('info'),
         ];
     }
 }
