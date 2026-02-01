@@ -1,4 +1,9 @@
-
+const CONFIG = {
+    // Jika di localhost, gunakan port 8000. Jika di hosting, sesuaikan dengan domain API kamu.
+    API_BASE_URL: window.location.hostname === 'localhost' ? 'http://localhost:8000' : window.location.origin.replace(':3000', ''),
+    get API_URL() { return `${this.API_BASE_URL}/api`; },
+    get STORAGE_URL() { return `${this.API_BASE_URL}/storage/`; }
+};
 
 async function loadComponent(id, path) {
   const container = document.getElementById(id);
@@ -44,7 +49,7 @@ async function loadComponent(id, path) {
 async function fetchHeroData() {
     try {
         // Fetch from Laravel API (assuming port 8000)
-        const response = await fetch('http://localhost:8000/api/hero');
+        const response = await fetch(`${CONFIG.API_URL}/hero`);
         if (!response.ok) throw new Error('Failed to fetch hero data');
         
         const data = await response.json();
@@ -98,7 +103,7 @@ async function fetchHeroData() {
 
 async function fetchAboutData() {
     try {
-        const response = await fetch('http://localhost:8000/api/about');
+        const response = await fetch(`${CONFIG.API_URL}/about`);
         if (!response.ok) throw new Error('Failed to fetch about data');
         
         const data = await response.json();
@@ -131,7 +136,7 @@ async function fetchAboutData() {
 
 async function fetchChairpersonData() {
     try {
-        const response = await fetch('http://localhost:8000/api/chairperson-message');
+        const response = await fetch(`${CONFIG.API_URL}/chairperson-message`);
         if (!response.ok) throw new Error('Failed to fetch chairperson message');
         
         const data = await response.json();
@@ -284,7 +289,7 @@ function initCounters() {
 /* CMS Fetch Functions */
 async function fetchValuesData() {
     try {
-        const r = await fetch('http://localhost:8000/api/values');
+        const r = await fetch(`${CONFIG.API_URL}/values`);
         if(!r.ok) return;
         const data = await r.json();
         const container = document.querySelector('#values-section .row.g-4');
@@ -293,7 +298,7 @@ async function fetchValuesData() {
             <div class="col-lg-3 col-md-6">
                 <div class="value-card bg-white p-4 h-100 rounded-4 border hover-shadow d-block text-decoration-none">
                     <div class="icon-box rounded-3 d-flex align-items-center justify-content-center mb-4 text-white bg-danger" style="width:48px;height:48px;overflow:hidden;">
-                       ${item.icon ? `<img src="http://localhost:8000/storage/${item.icon}" style="width:100%;height:100%;object-fit:contain;">` : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>'}
+                       ${item.icon ? `<img src="${CONFIG.STORAGE_URL}${item.icon}" style="width:100%;height:100%;object-fit:contain;">` : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>'}
                     </div>
                     <h5 class="fw-bold mb-3">${item.title}</h5>
                     <p class="text-secondary small mb-0">${item.description}</p>
@@ -305,7 +310,7 @@ async function fetchValuesData() {
 
 async function fetchProgramData() {
     try {
-        const r = await fetch('http://localhost:8000/api/programs');
+        const r = await fetch(`${CONFIG.API_URL}/programs`);
         if(!r.ok) return;
         const data = await r.json();
         const container = document.querySelector('#program-section .row.g-4');
@@ -316,7 +321,7 @@ async function fetchProgramData() {
                     <div class="position-absolute top-0 end-0 bg-secondary opacity-25 rounded-bottom-start-5" style="width: 80px; height: 80px; border-bottom-left-radius: 100% !important;"></div>
                     <div class="d-flex flex-column h-100">
                         <div class="icon-box bg-danger text-white rounded-3 d-flex align-items-center justify-content-center mb-4" style="width: 56px; height: 56px; overflow:hidden;">
-                            ${item.icon ? `<img src="http://localhost:8000/storage/${item.icon}" style="width:100%;height:100%;object-fit:contain;">` : '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>'}
+                            ${item.icon ? `<img src="${CONFIG.STORAGE_URL}${item.icon}" style="width:100%;height:100%;object-fit:contain;">` : '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>'}
                         </div>
                         <h4 class="fw-bold mb-3">${item.title}</h4>
                         <p class="text-secondary mb-4 flex-grow-1">${item.description}</p>
@@ -335,7 +340,7 @@ async function fetchProgramData() {
 
 async function fetchCoverageData() {
     try {
-        const r = await fetch('http://localhost:8000/api/region-stats');
+        const r = await fetch(`${CONFIG.API_URL}/region-stats`);
         if(!r.ok) return;
         const data = await r.json();
         const container = document.querySelector('#coverage-section .region-stats .row');
@@ -365,16 +370,16 @@ async function fetchCoverageData() {
 
 async function fetchNewsData() {
     try {
-        const r = await fetch('http://localhost:8000/api/articles');
+        const r = await fetch(`${CONFIG.API_URL}/articles`);
         if(!r.ok) return;
         const data = await r.json();
         const container = document.querySelector('#news-section .row.g-4');
         if(container && data.length) {
             container.innerHTML = data.map(item => `
             <div class="col-lg-4 col-md-6">
-                <div class="news-card h-100 bg-white rounded-4 border overflow-hidden d-flex flex-column hover-shadow">
+                <div class="news-card h-100 bg-white rounded-4 border overflow-hidden d-flex flex-column hover-shadow position-relative">
                     <div class="news-img-wrapper position-relative overflow-hidden bg-light" style="height: 240px;">
-                        <img src="${item.image ? 'http://localhost:8000/storage/'+item.image : 'https://placehold.co/600x400'}" class="w-100 h-100 object-fit-cover">
+                        <img src="${item.image ? CONFIG.STORAGE_URL + item.image : 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=988&auto=format&fit=crop'}" class="w-100 h-100 object-fit-cover">
                         ${item.badge ? `<span class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill fw-medium">${item.badge}</span>` : ''}
                     </div>
                     <div class="p-4 d-flex flex-column flex-grow-1">
@@ -384,7 +389,7 @@ async function fetchNewsData() {
                         </div>
                         <h5 class="fw-bold mb-3 lh-base">${item.title}</h5>
                         <p class="text-secondary small mb-4 flex-grow-1">${item.excerpt || ''}</p>
-                        <a href="#" class="d-inline-flex align-items-center text-danger fw-semibold text-decoration-none read-more-link">
+                        <a href="news-detail.html?id=${item.id}" class="d-inline-flex align-items-center text-danger fw-semibold text-decoration-none read-more-link stretched-link">
                             Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
                         </a>
                     </div>
@@ -396,7 +401,7 @@ async function fetchNewsData() {
 
 async function fetchGalleryData() {
     try {
-        const r = await fetch('http://localhost:8000/api/gallery');
+        const r = await fetch(`${CONFIG.API_URL}/gallery`);
         if(!r.ok) return;
         const data = await r.json();
         const container = document.querySelector('#gallery-section .row.g-4');
@@ -406,7 +411,7 @@ async function fetchGalleryData() {
             container.innerHTML = data.map((item, i) => `
             <div class="col-lg-4 col-md-6">
                 <div class="gallery-card rounded-4 overflow-hidden position-relative h-100 cursor-pointer" style="min-height: 300px;" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="setGalleryIndex(${i})">
-                    <img src="http://localhost:8000/storage/${item.image}" alt="${item.title}" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                    <img src="${CONFIG.STORAGE_URL}${item.image}" alt="${item.title}" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
                     <div class="gradient-overlay position-absolute bottom-0 start-0 w-100 p-4 text-white d-flex flex-column justify-content-end h-100">
                         <h4 class="fw-bold mb-1">${item.title}</h4>
                         <p class="small opacity-75 mb-0">${item.category || ''}</p>
@@ -417,7 +422,7 @@ async function fetchGalleryData() {
             if(carouselInner) {
                 carouselInner.innerHTML = data.map((item, i) => `
                 <div class="carousel-item ${i===0 ? 'active' : ''}">
-                    <img src="http://localhost:8000/storage/${item.image}" class="d-block w-100 rounded-4" alt="${item.title}">
+                    <img src="${CONFIG.STORAGE_URL}${item.image}" class="d-block w-100 rounded-4" alt="${item.title}">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="fw-bold">${item.title}</h3>
                         <p>${item.caption || ''}</p>
@@ -430,7 +435,7 @@ async function fetchGalleryData() {
 
 async function fetchSettingsData() {
     try {
-        const r = await fetch('http://localhost:8000/api/settings');
+        const r = await fetch(`${CONFIG.API_URL}/settings`);
         if(!r.ok) return;
         const settings = await r.json();
         
@@ -466,7 +471,7 @@ function initAspirationForm() {
         };
 
         try {
-            const r = await fetch('http://localhost:8000/api/aspirations', {
+            const r = await fetch(`${CONFIG.API_URL}/aspirations`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

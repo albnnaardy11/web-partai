@@ -8,8 +8,28 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(Article::all());
+        $query = Article::query();
+
+        if ($request->has('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                  ->orWhere('content', 'like', "%{$search}%")
+                  ->orWhere('excerpt', 'like', "%{$search}%");
+            });
+        }
+
+        return response()->json($query->latest()->get());
+    }
+
+    public function show($id)
+    {
+        $article = Article::find($id);
+        if (!$article) {
+            return response()->json(['message' => 'Article not found'], 404);
+        }
+        return response()->json($article);
     }
 }

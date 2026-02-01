@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Berita | Partai Ibu</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../dist/css/main.css" />
+
+    <style>
+        .article-header {
+            padding: 80px 0 60px;
+            background: #fdfdfd;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: -100px;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-body {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #444;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- ================= NAVBAR ================= -->
+    <div id="navbar"></div>
+
+    <!-- ================= HEADER ================= -->
+    <div class="article-header bg-danger text-white text-center pb-5">
+        <div class="container py-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html"
+                            class="text-white opacity-75 text-decoration-none">Beranda</a></li>
+                    <li class="breadcrumb-item"><a href="news.html"
+                            class="text-white opacity-75 text-decoration-none">Berita</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <div class="container pb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <div id="article-loader" class="text-center py-5">
+                    <div class="spinner-grow text-danger" role="status"></div>
+                </div>
+
+                <div id="article-wrapper" class="d-none">
+                    <div class="article-card mb-5">
+                        <div class="row g-0">
+                            <div class="col-12">
+                                <img id="detail-image" src="" alt="Feature Image" class="w-100 object-fit-cover"
+                                    style="height: 500px;">
+                            </div>
+                            <div class="col-12 p-4 p-md-5">
+                                <div class="mb-4">
+                                    <span id="detail-badge"
+                                        class="badge bg-danger rounded-pill px-3 py-2 fw-bold mb-3"></span>
+                                    <h1 id="detail-title" class="display-4 fw-bold text-dark mt-2 mb-4"></h1>
+                                    <div
+                                        class="d-flex flex-wrap align-items-center gap-4 text-secondary pb-4 border-bottom">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                                <path
+                                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                            </svg>
+                                            <span id="detail-date"></span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                            </svg>
+                                            <span>Sekretariat Jenderal</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="detail-content" class="article-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent("navbar", "components/navbar.html");
+            await loadComponent("footer", "components/footer.html");
+            fetchArticleDetail();
+        });
+
+        async function fetchArticleDetail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            if (!id) { window.location.href = 'news.html'; return; }
+
+            try {
+                const r = await fetch(`${CONFIG.API_URL}/articles/${id}`);
+                if (!r.ok) throw new Error();
+                const item = await r.json();
+
+                const wrapper = document.getElementById('article-wrapper');
+                const loader = document.getElementById('article-loader');
+
+                document.getElementById('detail-title').innerText = item.title;
+                document.getElementById('detail-badge').innerText = item.badge || 'BERITA';
+                document.getElementById('detail-date').innerText = new Date(item.published_date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
+                const img = document.getElementById('detail-image');
+                img.src = item.image ? CONFIG.STORAGE_URL + item.image : 'https://images.unsplash.com/photo-1542601906990-b4d3fb7d5b43?q=80&w=1000&auto=format&fit=crop';
+
+                const content = document.getElementById('detail-content');
+                content.innerHTML = `<p>${item.content.replace(/\n/g, '</p><p>')}</p>`;
+
+                loader.remove();
+                wrapper.classList.remove('d-none');
+            } catch (e) {
+                document.getElementById('article-wrapper').innerHTML = '<div class="alert alert-danger">Artikel tidak ditemukan.</div>';
+                document.getElementById('article-wrapper').classList.remove('d-none');
+                document.getElementById('article-loader').remove();
+            }
+        }
+    </script>
+</body>
+
+</html>

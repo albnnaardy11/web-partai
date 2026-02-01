@@ -73,5 +73,34 @@ class ProductionSeeder extends Seeder
         SiteSetting::create(['key' => 'address', 'value' => 'Jl. Merdeka No. 1, Jakarta Pusat', 'type' => 'text', 'group' => 'contact']);
         SiteSetting::create(['key' => 'phone', 'value' => '+62 21 1234 5678', 'type' => 'text', 'group' => 'contact']);
         SiteSetting::create(['key' => 'email', 'value' => 'kontak@partaiibu.id', 'type' => 'text', 'group' => 'contact']);
+
+        // Articles
+        $articles = [
+            [
+                'title' => 'Partai Ibu Luncurkan Program Beasiswa untuk 50,000 Anak Indonesia',
+                'excerpt' => 'Program beasiswa pendidikan gratis diluncurkan untuk membantu anak-anak Indonesia dari keluarga kurang mampu.',
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                'badge' => 'Program',
+                'published_date' => now(),
+                'status' => 'published'
+            ],
+            [
+                'title' => 'Kunjungan ke 10 Provinsi: Mendengar Aspirasi Ibu-Ibu Indonesia',
+                'excerpt' => 'Ketua Umum Partai Ibu melakukan kunjungan kerja ke berbagai provinsi untuk mendengar langsung aspirasi masyarakat.',
+                'content' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'badge' => 'Kegiatan',
+                'published_date' => now()->subDays(2),
+                'status' => 'published'
+            ],
+            [
+                'title' => 'UMKM Binaan Partai Ibu Raih Omzet Miliaran Rupiah',
+                'excerpt' => 'Ratusan UMKM yang dibina Partai Ibu berhasil meningkatkan omzet hingga ratusan persen dalam 6 bulan terakhir.',
+                'content' => 'Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.',
+                'badge' => 'Prestasi',
+                'published_date' => now()->subDays(5),
+                'status' => 'published'
+            ],
+        ];
+        foreach($articles as $a) Article::create($a);
     }
 }
